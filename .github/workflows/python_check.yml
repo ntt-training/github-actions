@@ -31,4 +31,4 @@ jobs:
         pylint ${GITHUB_WORKSPACE}/python/*.py
     - name: Run sample program
       run: |
-        pylint ${GITHUB_WORKSPACE}/python/sample.py
+        python ${GITHUB_WORKSPACE}/python/sample.py
