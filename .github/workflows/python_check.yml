@@ -24,7 +24,8 @@ jobs:
         flake8 ${GITHUB_WORKSPACE}/python/*.py
     - name: Run test via nose2
       run: |
-        python -m nose2 ${GITHUB_WORKSPACE}/python
+        # absolute path seems to cause troublesome
+        python -m nose2 python
     - name: Analysing the code with pylint
       run: |
         pylint ${GITHUB_WORKSPACE}/python/*.py
