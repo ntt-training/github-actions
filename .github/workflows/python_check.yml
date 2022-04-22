@@ -22,9 +22,12 @@ jobs:
     - name: Run Coding Style Check
       run: |
         flake8 ${GITHUB_WORKSPACE}/python/*.py
-    - name: Run Test via nose2
+    - name: Run test via nose2
       run: |
         python -m nose2 ${GITHUB_WORKSPACE}/python
     - name: Analysing the code with pylint
       run: |
         pylint ${GITHUB_WORKSPACE}/python/*.py
+    - name: Run sample program
+      run: |
+        pylint ${GITHUB_WORKSPACE}/python/sample.py
