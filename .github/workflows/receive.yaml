@@ -9,7 +9,7 @@ on:
 jobs:
   hello:
     # restrict this workflow call only from this repository
-    if: github.event.repository.full_name == "ntt-trainning/github_actions"
+    if: github.event.repository.full_name == 'ntt-trainning/github_actions'
     env:
       BODY: ${{ github.event.client_payload.body }}
     # The type of runner that the job will run on
