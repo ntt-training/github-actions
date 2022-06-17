@@ -14,9 +14,11 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-      - uses: octokit/request-action@v2.x
-        with:
-          route: POST /repos/{owner}/{repo}/dispatches
-          owner: ntt-training
-          repo: github-actions
-          body: '{"event_type":"receive-test", "client_payload": {"body": "This is world!"}}'
+      - name: call api via curl
+        run: |
+         curl \
+         -X POST \
+         -H "Authorization: token ${{ secrets.REPO_ACCESS_TOKEN }}" \
+         -H "Accept: application/vnd.github.v3+json" \
+         https://api.github.com/repos/ntt-training/github-actions/dispatches \
+         -d '{"event_type":"receive-test", "client_payload": {"body": "This is world!"}}'
