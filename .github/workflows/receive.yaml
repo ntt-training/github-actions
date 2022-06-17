@@ -1,4 +1,4 @@
-name: receive event
+name: Receive
 
 # Controls when the workflow will run
 on:
